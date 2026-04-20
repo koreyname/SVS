@@ -1,0 +1,132 @@
+%YAML:1.0
+
+# 最优参数配置
+# 生成时间: 2025-12-28T16:44:26.539212
+# 优化方法: bayesian
+# 最优损失: 1.716355
+# 基线 ATE (干净): 1.5695 m
+# 基线 ATE (攻击): 6.8711 m
+#
+# 优化的参数:
+#   patch_defense.candidate_score_threshold: 0.3088
+#   patch_defense.candidate_weight_density: 2.9237
+#   patch_defense.candidate_weight_descriptor: 0.6871
+#   patch_defense.candidate_weight_orientation: 0.3456
+#   patch_defense.lambda_context: 1.5918
+#   patch_defense.alpha_texture: 1.1885
+#   patch_defense.alpha_orientation: 0.6168
+#   patch_defense.orientation_threshold: 1.8422
+#   patch_defense.ema_alpha_density: 0.9058
+#   patch_defense.ema_alpha_descriptor: 0.7652
+#   patch_defense.burst_lambda_density: 1.1612
+#   patch_defense.burst_lambda_descriptor: 1.0644
+#   patch_defense.eta_temporal: 0.3936
+#   patch_defense.k_mask_weight: 2.9614
+#   patch_defense.k_temp_weight: 3.2995
+#   patch_defense.k_risk_mask: 4.1247
+#   patch_defense.weight_mask: 1.1861
+#   patch_defense.weight_temp: 1.4301
+#   patch_defense.w_min: 0.0825
+#   patch_defense.safe_weight_threshold: 0.3538
+#   patch_defense.tau_safe: 0.3793
+#   patch_defense.loop_kl_loose: 1.4513
+#   patch_defense.loop_kl_strict: 0.3973
+#   patch_defense.density_quantile: 0.7065
+#   patch_defense.descriptor_quantile: 0.2045
+#   patch_defense.descriptor_high_quantile: 0.8868
+#   patch_defense.orientation_quantile: 0.1708
+
+use_patch_defense: 0
+
+patch_defense:
+  enable_risk_mask: 1
+  risk_mask_scope: 1
+  enable_local_statistics: 1
+  enable_density_stat: 1
+  enable_descriptor_stat: 1
+  enable_orientation_stat: 1
+  enable_pyramid_risk: 1
+  enable_temporal_consistency: 1
+  temporal_scope: 1
+  enable_weighted_frontend: 1
+  enable_weighted_ba: 1
+  enable_loop_defense: 1
+  defense_orbslam2_lost_policy: 1
+  enable_motion_guard: 1
+  motion_guard_source: 2
+  motion_guard_mode: 1
+  motion_guard_min_keyframes: 3
+  motion_guard_safe_weight_threshold: 0.45
+  motion_guard_suspect_weight_threshold: 0.4
+  motion_guard_min_safe_points: 700
+  motion_guard_min_suspect_points: 30
+  motion_guard_static_px: 0.35
+  motion_guard_patch_px: 2
+  motion_guard_mismatch_px: 2
+  motion_guard_moving_ratio_threshold: 0.4
+  motion_guard_hold_on_frames: 5
+  motion_guard_hold_off_frames: 3
+  motion_guard_win_size: 2
+  motion_guard_pyr_levels: 3
+  grid_size: 14
+  entropy_bins: 32
+  context_radius: 3
+  lambda_context: 1.5917970581178922
+  alpha_texture: 1.1884789730384255
+  alpha_orientation: 0.6167627213953895
+  orientation_bins: 16
+  orientation_threshold: 1.8422296861831535
+  gaussian_kernel: 7
+  gaussian_sigma: 1
+  dilation_iterations: 1
+  multi_scale_cells: [8, 12]
+  density_quantile: 0.7065453384174173
+  descriptor_quantile: 0.20450078151039686
+  descriptor_high_quantile: 0.8868375671368867
+  orientation_quantile: 0.17080593382046866
+  orient_min_points: 3
+  candidate_score_threshold: 0.308817952996717
+  candidate_weight_density: 2.923658228809945
+  candidate_weight_descriptor: 0.6870714097926528
+  candidate_weight_orientation: 0.3456298123135516
+  ema_alpha_density: 0.9057874035113538
+  ema_alpha_descriptor: 0.7651720984022543
+  burst_lambda_density: 1.1612005401930756
+  burst_lambda_descriptor: 1.0643744296208222
+  eta_temporal: 0.3936454621027547
+  desc_min_points: 3
+  w_min: 0.08249221634797141
+  w_floor: 0.001
+  k_mask_weight: 2.961382916274247
+  k_temp_weight: 3.2995095959335985
+  k_risk_mask: 4.124685161023564
+  weight_mask: 1.1861244207745796
+  weight_temp: 1.4301333840331651
+  keyframe_use_safe_ratio: 0
+  keyframe_safe_ratio_min: 0.4
+  logging: 0
+  log_risk_mask: 0
+  log_density: 0
+  log_descriptor: 0
+  log_orientation: 0
+  log_candidate_gate: 0
+  log_motion_guard: 0
+  log_temporal: 0
+  log_loop_defense: 1
+  safe_weight_threshold: 0.35382648543931583
+  tau_safe: 0.3793062121525012 #0.3600062121525012 
+  loop_cover_reject: 0.02
+  loop_cover_no_kl: 0.2
+  loop_cover_loose: 0.35
+  loop_kl_loose: 1.4513267956973777
+  loop_kl_strict: 0.3972794238379116
+  histogram_bins: 6
+  histogram_epsilon: 0.0001
+  loop_disable_after_first: 1
+  loop_safe_ratio_boost: 0.6
+  loop_delta_pos_boost: 1
+  loop_delta_pos: 0.4
+  loop_delta_neg: 0.2
+  loop_state_on: 0.45
+  loop_state_off: 0.1
+  loop_match_output_dir: "./output_match"
