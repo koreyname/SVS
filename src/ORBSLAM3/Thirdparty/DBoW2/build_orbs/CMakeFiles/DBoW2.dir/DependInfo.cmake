@@ -4,12 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/DBoW2/DBoW2/BowVector.cpp" "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/DBoW2/build_orbs/CMakeFiles/DBoW2.dir/DBoW2/BowVector.cpp.o"
-  "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/DBoW2/DBoW2/FORB.cpp" "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/DBoW2/build_orbs/CMakeFiles/DBoW2.dir/DBoW2/FORB.cpp.o"
-  "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/DBoW2/DBoW2/FeatureVector.cpp" "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/DBoW2/build_orbs/CMakeFiles/DBoW2.dir/DBoW2/FeatureVector.cpp.o"
-  "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/DBoW2/DBoW2/ScoringObject.cpp" "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/DBoW2/build_orbs/CMakeFiles/DBoW2.dir/DBoW2/ScoringObject.cpp.o"
-  "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/DBoW2/DUtils/Random.cpp" "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/DBoW2/build_orbs/CMakeFiles/DBoW2.dir/DUtils/Random.cpp.o"
-  "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/DBoW2/DUtils/Timestamp.cpp" "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/DBoW2/build_orbs/CMakeFiles/DBoW2.dir/DUtils/Timestamp.cpp.o"
+  "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/DBoW2/DBoW2/BowVector.cpp" "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/DBoW2/build_orbs/CMakeFiles/DBoW2.dir/DBoW2/BowVector.cpp.o"
+  "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/DBoW2/DBoW2/FORB.cpp" "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/DBoW2/build_orbs/CMakeFiles/DBoW2.dir/DBoW2/FORB.cpp.o"
+  "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/DBoW2/DBoW2/FeatureVector.cpp" "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/DBoW2/build_orbs/CMakeFiles/DBoW2.dir/DBoW2/FeatureVector.cpp.o"
+  "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/DBoW2/DBoW2/ScoringObject.cpp" "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/DBoW2/build_orbs/CMakeFiles/DBoW2.dir/DBoW2/ScoringObject.cpp.o"
+  "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/DBoW2/DUtils/Random.cpp" "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/DBoW2/build_orbs/CMakeFiles/DBoW2.dir/DUtils/Random.cpp.o"
+  "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/DBoW2/DUtils/Timestamp.cpp" "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/DBoW2/build_orbs/CMakeFiles/DBoW2.dir/DUtils/Timestamp.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

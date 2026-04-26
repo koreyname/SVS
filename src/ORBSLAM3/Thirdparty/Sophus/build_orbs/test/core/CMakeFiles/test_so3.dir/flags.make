@@ -6,5 +6,5 @@ CXX_FLAGS =  -Wall -Werror -Wextra -std=c++11 -Wno-deprecated-declarations -ftem
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus -isystem /usr/include/eigen3 
+CXX_INCLUDES = -I/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus -isystem /usr/include/eigen3 
 

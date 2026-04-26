@@ -1,4 +1,4 @@
-# Install script for directory: /home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/g2o
+# Install script for directory: /home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/g2o
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

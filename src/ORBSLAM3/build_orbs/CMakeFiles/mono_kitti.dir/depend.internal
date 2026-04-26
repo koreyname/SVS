@@ -72,7 +72,7 @@ CMakeFiles/mono_kitti.dir/Examples/Monocular/mono_kitti.cc.o
  ../include/TwoViewReconstruction.h
  ../include/Utils/SignalHandler.h
  ../include/Viewer.h
- /home/korey/桌面/my_work/src/ORBSLAM3/Examples/Monocular/mono_kitti.cc
+ /home/korey/Desktop/my_work/src/ORBSLAM3/Examples/Monocular/mono_kitti.cc
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense

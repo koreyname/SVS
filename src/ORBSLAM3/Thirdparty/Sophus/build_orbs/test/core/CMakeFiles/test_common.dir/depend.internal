@@ -6,7 +6,7 @@ test/core/CMakeFiles/test_common.dir/test_common.cpp.o
  ../sophus/formatstring.hpp
  ../sophus/test_macros.hpp
  ../sophus/types.hpp
- /home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/test/core/test_common.cpp
+ /home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/test/core/test_common.cpp
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/src/Core/Array.h
  /usr/include/eigen3/Eigen/src/Core/ArrayBase.h

@@ -1144,7 +1144,7 @@ Settings.h
 mutex
 -
 
-/home/korey/桌面/my_work/src/ORBSLAM3/Examples/Stereo-Inertial/stereo_inertial_euroc.cc
+/home/korey/Desktop/my_work/src/ORBSLAM3/Examples/Stereo-Inertial/stereo_inertial_euroc.cc
 iostream
 -
 algorithm
@@ -1166,9 +1166,9 @@ System.h
 Utils/SignalHandler.h
 -
 ImuTypes.h
-/home/korey/桌面/my_work/src/ORBSLAM3/Examples/Stereo-Inertial/ImuTypes.h
+/home/korey/Desktop/my_work/src/ORBSLAM3/Examples/Stereo-Inertial/ImuTypes.h
 Optimizer.h
-/home/korey/桌面/my_work/src/ORBSLAM3/Examples/Stereo-Inertial/Optimizer.h
+/home/korey/Desktop/my_work/src/ORBSLAM3/Examples/Stereo-Inertial/Optimizer.h
 
 /usr/include/eigen3/Eigen/Cholesky
 Core

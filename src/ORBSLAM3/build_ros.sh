@@ -13,7 +13,7 @@ fi
 ROS_PARENT_DIR="$(dirname "${ROS_PKG_DIR}")"
 export ROS_PACKAGE_PATH="${ROS_PACKAGE_PATH:-}:${ROOT_DIR}/${ROS_PARENT_DIR}"
 
-# 同理避免旧 build 目录缓存冲突
+# Likewise avoid cache conflicts with the old build directory.
 ROS_BUILD_DIR_NAME="${ROS_BUILD_DIR_NAME:-build_orbs}"
 BUILD_JOBS="${BUILD_JOBS:-$(nproc)}"
 

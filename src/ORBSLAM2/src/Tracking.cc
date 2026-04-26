@@ -382,7 +382,7 @@ void Tracking::Track()
         // Initial camera pose estimation using motion model or relocalization (if tracking is lost)
         if(mbMotionGuardFreezePose)
         {
-            // 冻结位姿：直接继承上一帧位姿，避免被动态干扰带偏。
+            // Freeze the pose: directly inherit the previous frame pose to avoid being pulled away by dynamic interference.
             if(!mLastGoodTcw.empty())
                 mCurrentFrame.SetPose(mLastGoodTcw.clone());
             else if(!mLastFrame.mTcw.empty())
@@ -511,7 +511,7 @@ void Tracking::Track()
 
         if(mbMotionGuardFreezePose)
         {
-            // Guard 激活时不允许进入 LOST，避免 reset/线程异常。
+            // Do not enter LOST while the guard is active, to avoid reset or thread exceptions.
             bOK = true;
             mState = OK;
         }
@@ -1155,7 +1155,7 @@ bool Tracking::NeedNewKeyFrame()
         const float safeRatio = mpPatchDefense->GetSafeRatio();
         if(safeRatio < mPatchConfig.keyframe_safe_ratio_min)
         {
-            // 权重不足时既不插关键帧，也保持当前位姿不变（回退到上一帧姿态）
+            // When the weights are insufficient, do not insert a keyframe and keep the current pose unchanged by falling back to the previous frame pose.
             if(!mLastFrame.mTcw.empty())
                 mCurrentFrame.SetPose(mLastFrame.mTcw);
             return false;

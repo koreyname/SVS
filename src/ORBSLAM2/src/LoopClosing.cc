@@ -703,7 +703,7 @@ void LoopClosing::SaveLoopMatchImage()
         static bool warnedOnce = false;
         if(!warnedOnce)
         {
-            std::cerr << "[LoopMatchDump] 关键帧未保存图像，无法输出匹配图；请在 args.yaml 配置 patch_defense.loop_match_output_dir。"
+            std::cerr << "[LoopMatchDump] Keyframe image was not saved, so the match visualization cannot be written; configure patch_defense.loop_match_output_dir in args.yaml."
                       << std::endl;
             warnedOnce = true;
         }
@@ -728,7 +728,7 @@ void LoopClosing::SaveLoopMatchImage()
 
     if(!EnsureDirectory(cfg.loop_match_output_dir))
     {
-        std::cerr << "[LoopMatchDump] 创建输出目录失败: " << cfg.loop_match_output_dir << std::endl;
+        std::cerr << "[LoopMatchDump] Failed to create output directory: " << cfg.loop_match_output_dir << std::endl;
         return;
     }
 
@@ -751,11 +751,11 @@ void LoopClosing::SaveLoopMatchImage()
     try
     {
         cv::imwrite(path, out);
-        std::cout << "[LoopMatchDump] 已输出: " << path << std::endl;
+        std::cout << "[LoopMatchDump] Wrote: " << path << std::endl;
     }
     catch(const cv::Exception &ex)
     {
-        std::cerr << "[LoopMatchDump] 写入失败: " << path << " err=" << ex.what() << std::endl;
+        std::cerr << "[LoopMatchDump] Write failed: " << path << " err=" << ex.what() << std::endl;
     }
 }
 
@@ -820,7 +820,7 @@ bool LoopClosing::EvaluateLoopSafety(float &safeRatio, double &klDiv, float &cov
     int curSafeTotal = 0;
     int loopSafeTotal = 0;
 
-    // 统计两端安全点总数（基于权重阈值）
+    // Count safe points on both sides, based on the weight threshold.
     const int curN = mpCurrentKF->N;
     for(int i=0; i<curN; ++i)
     {
@@ -916,7 +916,7 @@ bool LoopClosing::EvaluateLoopSafety(float &safeRatio, double &klDiv, float &cov
     std::vector<double> qDist = smoothNormalize(histLoop);
     klDiv = 0.5*(symKL(pDist,qDist)+symKL(qDist,pDist));
 
-    // 覆盖率分段决策
+    // Coverage-binned decision.
     if(cover <= cfg.loop_cover_reject)
     {
         klDiv = std::numeric_limits<double>::infinity();
@@ -924,7 +924,7 @@ bool LoopClosing::EvaluateLoopSafety(float &safeRatio, double &klDiv, float &cov
     }
     if(cover <= cfg.loop_cover_no_kl)
     {
-        // 计算 KL 但不作为拒绝依据
+        // Compute KL, but do not use it as a rejection criterion.
         return true;
     }
 
@@ -952,7 +952,7 @@ void LoopClosing::UpdateLoopSwitch(bool bSuccess, float safeRatio)
             delta = std::max(delta, cfg.loop_delta_pos_boost);
 
         mLoopSwitchState = std::min(1.f, mLoopSwitchState + delta);
-        // “一次验证即放行”：boost 时确保本帧就能开启回环修正
+        // One-check pass-through: when boost is active, make sure loop correction can be enabled in this frame.
         if(boost && mLoopSwitchState < cfg.loop_state_on)
             mLoopSwitchState = cfg.loop_state_on;
     }

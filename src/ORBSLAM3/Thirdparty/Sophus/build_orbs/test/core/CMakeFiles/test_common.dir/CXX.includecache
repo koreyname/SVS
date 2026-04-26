@@ -38,7 +38,7 @@ type_traits
 common.hpp
 ../sophus/common.hpp
 
-/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/test/core/test_common.cpp
+/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/test/core/test_common.cpp
 iostream
 -
 sophus/test_macros.hpp

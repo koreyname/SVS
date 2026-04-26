@@ -6,5 +6,5 @@ CXX_FLAGS =  -Wall   -O3 -std=c++11 -O3 -DNDEBUG -march=native -fPIC
 
 CXX_DEFINES = -DCOMPILEDWITHC11 -DORB_SLAM3_EXPORTS
 
-CXX_INCLUDES = -I/home/korey/桌面/my_work/src/ORBSLAM3 -I/home/korey/桌面/my_work/src/ORBSLAM3/include -I/home/korey/桌面/my_work/src/ORBSLAM3/include/CameraModels -I/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus -I/usr/include/eigen3 -isystem /usr/include/opencv4 
+CXX_INCLUDES = -I/home/korey/Desktop/my_work/src/ORBSLAM3 -I/home/korey/Desktop/my_work/src/ORBSLAM3/include -I/home/korey/Desktop/my_work/src/ORBSLAM3/include/CameraModels -I/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus -I/usr/include/eigen3 -isystem /usr/include/opencv4 
 

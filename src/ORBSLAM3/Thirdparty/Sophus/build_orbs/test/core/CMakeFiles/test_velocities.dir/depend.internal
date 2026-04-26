@@ -21,8 +21,8 @@ test/core/CMakeFiles/test_velocities.dir/test_velocities.cpp.o
  ../sophus/test_macros.hpp
  ../sophus/types.hpp
  ../sophus/velocities.hpp
- /home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/test/core/test_velocities.cpp
- /home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/test/core/tests.hpp
+ /home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/test/core/test_velocities.cpp
+ /home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/test/core/tests.hpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense

@@ -878,7 +878,7 @@ Settings.h
 mutex
 -
 
-/home/korey/桌面/my_work/src/ORBSLAM3/Examples/Monocular-Inertial/mono_inertial_tum_vi.cc
+/home/korey/Desktop/my_work/src/ORBSLAM3/Examples/Monocular-Inertial/mono_inertial_tum_vi.cc
 iostream
 -
 algorithm
@@ -898,7 +898,7 @@ System.h
 Utils/SignalHandler.h
 -
 ImuTypes.h
-/home/korey/桌面/my_work/src/ORBSLAM3/Examples/Monocular-Inertial/ImuTypes.h
+/home/korey/Desktop/my_work/src/ORBSLAM3/Examples/Monocular-Inertial/ImuTypes.h
 
 /usr/include/eigen3/Eigen/Cholesky
 Core

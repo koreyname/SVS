@@ -7,11 +7,11 @@ C_FLAGS =   -Wall   -O3  -Wall -W -O3 -DNDEBUG -march=native -O3 -march=native -
 
 C_DEFINES = -DCOMPILEDWITHC11 -DUNIX -Dg2o_EXPORTS
 
-C_INCLUDES = -I/home/korey/桌面/my_work/src/ORBSLAM3 -I/home/korey/桌面/my_work/src/ORBSLAM3/include -I/home/korey/桌面/my_work/src/ORBSLAM3/include/CameraModels -I/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus -I/usr/include/eigen3 -I/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/g2o/core -I/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/g2o/types -I/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/g2o/stuff 
+C_INCLUDES = -I/home/korey/Desktop/my_work/src/ORBSLAM3 -I/home/korey/Desktop/my_work/src/ORBSLAM3/include -I/home/korey/Desktop/my_work/src/ORBSLAM3/include/CameraModels -I/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus -I/usr/include/eigen3 -I/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/g2o/core -I/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/g2o/types -I/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/g2o/stuff 
 
 CXX_FLAGS =  -Wall   -O3 -std=c++11  -Wall -W -O3 -DNDEBUG -march=native -O3 -march=native -fPIC  
 
 CXX_DEFINES = -DCOMPILEDWITHC11 -DUNIX -Dg2o_EXPORTS
 
-CXX_INCLUDES = -I/home/korey/桌面/my_work/src/ORBSLAM3 -I/home/korey/桌面/my_work/src/ORBSLAM3/include -I/home/korey/桌面/my_work/src/ORBSLAM3/include/CameraModels -I/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus -I/usr/include/eigen3 -I/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/g2o/core -I/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/g2o/types -I/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/g2o/stuff 
+CXX_INCLUDES = -I/home/korey/Desktop/my_work/src/ORBSLAM3 -I/home/korey/Desktop/my_work/src/ORBSLAM3/include -I/home/korey/Desktop/my_work/src/ORBSLAM3/include/CameraModels -I/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus -I/usr/include/eigen3 -I/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/g2o/core -I/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/g2o/types -I/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/g2o/stuff 
 

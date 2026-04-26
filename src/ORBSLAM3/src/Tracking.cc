@@ -3367,7 +3367,7 @@ bool Tracking::NeedNewKeyFrame()
         const float safeRatio = mpPatchDefense->GetSafeRatio();
         if(safeRatio < mPatchConfig.keyframe_safe_ratio_min)
         {
-            // 权重不足时既不插关键帧，也保持当前位姿不变（回退到上一帧姿态）
+            // When the weights are insufficient, do not insert a keyframe and keep the current pose unchanged by falling back to the previous frame pose.
             if(mLastFrame.isSet())
                 mCurrentFrame.SetPose(mLastFrame.GetPose());
             return false;

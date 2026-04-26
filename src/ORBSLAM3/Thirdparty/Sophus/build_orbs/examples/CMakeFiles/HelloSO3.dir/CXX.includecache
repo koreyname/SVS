@@ -86,11 +86,11 @@ type_traits
 common.hpp
 ../sophus/common.hpp
 
-/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/examples/HelloSO3.cpp
+/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/examples/HelloSO3.cpp
 iostream
 -
 sophus/geometry.hpp
-/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/examples/sophus/geometry.hpp
+/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/examples/sophus/geometry.hpp
 
 /usr/include/eigen3/Eigen/Cholesky
 Core

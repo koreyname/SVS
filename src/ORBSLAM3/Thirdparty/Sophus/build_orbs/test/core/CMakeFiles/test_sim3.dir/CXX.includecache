@@ -158,7 +158,7 @@ type_traits
 common.hpp
 ../sophus/common.hpp
 
-/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/test/core/test_sim3.cpp
+/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/test/core/test_sim3.cpp
 iostream
 -
 unsupported/Eigen/MatrixFunctions
@@ -166,9 +166,9 @@ unsupported/Eigen/MatrixFunctions
 sophus/sim3.hpp
 -
 tests.hpp
-/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/test/core/tests.hpp
+/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/test/core/tests.hpp
 
-/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/test/core/tests.hpp
+/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/test/core/tests.hpp
 array
 -
 Eigen/StdVector

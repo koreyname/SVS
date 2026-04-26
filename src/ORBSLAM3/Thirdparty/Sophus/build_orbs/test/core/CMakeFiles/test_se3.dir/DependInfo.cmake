@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/test/core/test_se3.cpp" "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/build_orbs/test/core/CMakeFiles/test_se3.dir/test_se3.cpp.o"
+  "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/test/core/test_se3.cpp" "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/build_orbs/test/core/CMakeFiles/test_se3.dir/test_se3.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

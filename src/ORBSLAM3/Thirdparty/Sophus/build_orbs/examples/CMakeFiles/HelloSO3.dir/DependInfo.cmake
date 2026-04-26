@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/examples/HelloSO3.cpp" "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/build_orbs/examples/CMakeFiles/HelloSO3.dir/HelloSO3.cpp.o"
+  "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/examples/HelloSO3.cpp" "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/build_orbs/examples/CMakeFiles/HelloSO3.dir/HelloSO3.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

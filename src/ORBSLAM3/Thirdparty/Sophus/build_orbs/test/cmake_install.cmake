@@ -1,4 +1,4 @@
-# Install script for directory: /home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/test
+# Install script for directory: /home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,8 +39,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/build_orbs/test/core/cmake_install.cmake")
-  include("/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/build_orbs/test/ceres/cmake_install.cmake")
+  include("/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/build_orbs/test/core/cmake_install.cmake")
+  include("/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/build_orbs/test/ceres/cmake_install.cmake")
 
 endif()
 

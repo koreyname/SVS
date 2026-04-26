@@ -1,6 +1,6 @@
 /**
  * PatchDefense.cc
- * 实现基于纹理反差与时间一致性的软加权防御模块。
+ * Implements the soft-weighted defense module based on texture contrast and temporal consistency.
  *
  * @author Korey
  * @Date 2025-01-05
@@ -92,7 +92,7 @@ bool LoadPatchDefenseConfig(PatchDefenseConfig &config)
 
     if(foundPath.empty())
     {
-        std::cerr << "[PatchDefense] 未找到 args.yaml，使用默认参数。" << std::endl;
+        std::cerr << "[PatchDefense] args.yaml was not found; using default parameters." << std::endl;
         return false;
     }
 
@@ -129,7 +129,7 @@ bool LoadPatchDefenseConfig(PatchDefenseConfig &config)
             READ_BOOL(enable_loop_defense, config.enable_loop_defense);
             READ_BOOL(enable_pyramid_risk, config.enable_pyramid_risk);
 
-            // Motion guard (Tracking 级冻结守卫)
+            // Motion guard (Tracking-level freeze guard)
             READ_BOOL(enable_motion_guard, config.motion_guard.enable_motion_guard);
             READ_INT(motion_guard_source, config.motion_guard.source);
             READ_INT(motion_guard_mode, config.motion_guard.mode);
@@ -228,7 +228,7 @@ bool LoadPatchDefenseConfig(PatchDefenseConfig &config)
     }
     catch(const cv::Exception &ex)
     {
-        std::cerr << "[PatchDefense] 解析 args.yaml 失败: " << ex.what() << std::endl;
+        std::cerr << "[PatchDefense] Failed to parse args.yaml: " << ex.what() << std::endl;
         return false;
     }
 
@@ -780,7 +780,7 @@ void PatchDefense::ComputeLocalStatistics(Frame &frame)
         if(indices.empty())
             continue;
         const cv::Mat &riskLevel = mRiskPyramid[level];
-        // 风险图可能为空（未启用风险掩膜时），此时回退到图像金字塔尺寸
+        // Risk maps may be empty when the risk mask is disabled; in that case, fall back to the image-pyramid size.
         const float scale = mScaleFactors[level];
         const int fallbackWidth = std::max(1, static_cast<int>(std::round(mBaseSize.width / scale)));
         const int fallbackHeight = std::max(1, static_cast<int>(std::round(mBaseSize.height / scale)));
@@ -922,7 +922,7 @@ void PatchDefense::ComputeLocalStatistics(Frame &frame)
                     if(denom > 1e-3f)
                         rD = (densityRatios[c] - Td) / denom;
                     else
-                        rD = 0.f; // 阈值与最大值接近时，不拉满风险
+                        rD = 0.f; // When the threshold is close to the maximum value, do not saturate the risk.
                 }
 
                 float rSigma = 0.f;
@@ -1087,7 +1087,7 @@ void PatchDefense::ComputeLocalStatistics(Frame &frame)
     {
         mLastOrientationMin = mLastOrientationMax = mLastOrientationMean = 0.f;
     }
-    // 统计最终判为密度异常的特征点数量（去重）
+    // Count the unique features finally classified as density anomalies.
     if(mConfig.enable_local_statistics && mConfig.enable_density_stat)
     {
         mLastDensityHighCount = 0;
@@ -1099,7 +1099,7 @@ void PatchDefense::ComputeLocalStatistics(Frame &frame)
     {
         mLastDensityHighCount = 0;
     }
-    // 描述子异常数量
+    // Number of descriptor anomalies.
     if(mConfig.enable_local_statistics && mConfig.enable_descriptor_stat)
     {
         mLastDescriptorHighCount = 0;
@@ -1111,7 +1111,7 @@ void PatchDefense::ComputeLocalStatistics(Frame &frame)
     {
         mLastDescriptorHighCount = 0;
     }
-    // 方向异常数量
+    // Number of orientation anomalies.
     if(mConfig.enable_local_statistics && mConfig.enable_orientation_stat)
     {
         mLastOrientationHighCount = 0;

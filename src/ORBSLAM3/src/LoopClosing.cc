@@ -1342,7 +1342,7 @@ void LoopClosing::SaveLoopMatchImage()
         static bool warnedOnce = false;
         if(!warnedOnce)
         {
-            std::cerr << "[LoopMatchDump] 关键帧未保存图像，无法输出匹配图；请在 args.yaml 配置 patch_defense.loop_match_output_dir。"
+            std::cerr << "[LoopMatchDump] Keyframe image was not saved, so the match visualization cannot be written; configure patch_defense.loop_match_output_dir in args.yaml."
                       << std::endl;
             warnedOnce = true;
         }
@@ -1370,7 +1370,7 @@ void LoopClosing::SaveLoopMatchImage()
 
     if(!EnsureDirectory(cfg.loop_match_output_dir))
     {
-        std::cerr << "[LoopMatchDump] 创建输出目录失败: " << cfg.loop_match_output_dir << std::endl;
+        std::cerr << "[LoopMatchDump] Failed to create output directory: " << cfg.loop_match_output_dir << std::endl;
         return;
     }
 
@@ -1393,11 +1393,11 @@ void LoopClosing::SaveLoopMatchImage()
     try
     {
         cv::imwrite(path, out);
-        std::cout << "[LoopMatchDump] 已输出: " << path << std::endl;
+        std::cout << "[LoopMatchDump] Wrote: " << path << std::endl;
     }
     catch(const cv::Exception &ex)
     {
-        std::cerr << "[LoopMatchDump] 写入失败: " << path << " err=" << ex.what() << std::endl;
+        std::cerr << "[LoopMatchDump] Write failed: " << path << " err=" << ex.what() << std::endl;
     }
 }
 
@@ -2641,7 +2641,7 @@ void LoopClosing::ResetIfRequested()
 
 void LoopClosing::RunGlobalBundleAdjustment(Map* pActiveMap, unsigned long nLoopKF)
 {  
-    // 便于默认 QUIET 模式下也能看到 GBA 生命周期日志
+    // Make GBA lifecycle logs visible even in the default QUIET mode.
     Verbose::PrintMess("Starting Global Bundle Adjustment", Verbose::VERBOSITY_QUIET);
 
 #ifdef REGISTER_TIMES

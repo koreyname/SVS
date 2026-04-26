@@ -97,7 +97,7 @@ CMakeFiles/stereo_inertial_euroc.dir/Examples/Stereo-Inertial/stereo_inertial_eu
  ../include/TwoViewReconstruction.h
  ../include/Utils/SignalHandler.h
  ../include/Viewer.h
- /home/korey/桌面/my_work/src/ORBSLAM3/Examples/Stereo-Inertial/stereo_inertial_euroc.cc
+ /home/korey/Desktop/my_work/src/ORBSLAM3/Examples/Stereo-Inertial/stereo_inertial_euroc.cc
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense

@@ -1,6 +1,6 @@
 echo "Building ROS nodes"
 
-# 优先使用当前仓库的 ROS 包，避免与其他同名 ORB_SLAM2 冲突
+# Prefer the ROS package in the current repository to avoid conflicts with other packages named ORB_SLAM2.
 cd Examples/ROS/ORB_SLAM2
 export ROS_PACKAGE_PATH="$(pwd):${ROS_PACKAGE_PATH}"
 

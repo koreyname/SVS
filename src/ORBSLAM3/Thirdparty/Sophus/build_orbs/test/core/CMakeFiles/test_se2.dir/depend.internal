@@ -20,8 +20,8 @@ test/core/CMakeFiles/test_se2.dir/test_se2.cpp.o
  ../sophus/so3.hpp
  ../sophus/test_macros.hpp
  ../sophus/types.hpp
- /home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/test/core/test_se2.cpp
- /home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/test/core/tests.hpp
+ /home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/test/core/test_se2.cpp
+ /home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/test/core/tests.hpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense

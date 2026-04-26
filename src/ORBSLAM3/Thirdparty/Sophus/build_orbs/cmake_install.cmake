@@ -1,4 +1,4 @@
-# Install script for directory: /home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus
+# Install script for directory: /home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -41,7 +41,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/sophus/cmake/SophusTargets.cmake")
     file(DIFFERENT EXPORT_FILE_CHANGED FILES
          "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/sophus/cmake/SophusTargets.cmake"
-         "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/build_orbs/CMakeFiles/Export/share/sophus/cmake/SophusTargets.cmake")
+         "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/build_orbs/CMakeFiles/Export/share/sophus/cmake/SophusTargets.cmake")
     if(EXPORT_FILE_CHANGED)
       file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/sophus/cmake/SophusTargets-*.cmake")
       if(OLD_CONFIG_FILES)
@@ -50,44 +50,44 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
       endif()
     endif()
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/sophus/cmake" TYPE FILE FILES "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/build_orbs/CMakeFiles/Export/share/sophus/cmake/SophusTargets.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/sophus/cmake" TYPE FILE FILES "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/build_orbs/CMakeFiles/Export/share/sophus/cmake/SophusTargets.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/sophus/cmake" TYPE FILE FILES
-    "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/build_orbs/SophusConfig.cmake"
-    "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/build_orbs/SophusConfigVersion.cmake"
+    "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/build_orbs/SophusConfig.cmake"
+    "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/build_orbs/SophusConfigVersion.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/sophus" TYPE FILE FILES
-    "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/average.hpp"
-    "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/common.hpp"
-    "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/geometry.hpp"
-    "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/interpolate.hpp"
-    "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/interpolate_details.hpp"
-    "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/num_diff.hpp"
-    "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/rotation_matrix.hpp"
-    "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/rxso2.hpp"
-    "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/rxso3.hpp"
-    "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/se2.hpp"
-    "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/se3.hpp"
-    "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/sim2.hpp"
-    "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/sim3.hpp"
-    "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/sim_details.hpp"
-    "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/so2.hpp"
-    "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/so3.hpp"
-    "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/types.hpp"
-    "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/velocities.hpp"
-    "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/formatstring.hpp"
+    "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/average.hpp"
+    "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/common.hpp"
+    "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/geometry.hpp"
+    "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/interpolate.hpp"
+    "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/interpolate_details.hpp"
+    "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/num_diff.hpp"
+    "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/rotation_matrix.hpp"
+    "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/rxso2.hpp"
+    "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/rxso3.hpp"
+    "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/se2.hpp"
+    "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/se3.hpp"
+    "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/sim2.hpp"
+    "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/sim3.hpp"
+    "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/sim_details.hpp"
+    "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/so2.hpp"
+    "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/so3.hpp"
+    "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/types.hpp"
+    "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/velocities.hpp"
+    "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/sophus/formatstring.hpp"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/build_orbs/test/cmake_install.cmake")
-  include("/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/build_orbs/examples/cmake_install.cmake")
+  include("/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/build_orbs/test/cmake_install.cmake")
+  include("/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/build_orbs/examples/cmake_install.cmake")
 
 endif()
 
@@ -99,5 +99,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/build_orbs/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/build_orbs/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

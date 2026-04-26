@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/korey/桌面/my_work/src/ORBSLAM3/Examples/Stereo-Inertial/stereo_inertial_tum_vi.cc" "/home/korey/桌面/my_work/src/ORBSLAM3/build_orbs/CMakeFiles/stereo_inertial_tum_vi.dir/Examples/Stereo-Inertial/stereo_inertial_tum_vi.cc.o"
+  "/home/korey/Desktop/my_work/src/ORBSLAM3/Examples/Stereo-Inertial/stereo_inertial_tum_vi.cc" "/home/korey/Desktop/my_work/src/ORBSLAM3/build_orbs/CMakeFiles/stereo_inertial_tum_vi.dir/Examples/Stereo-Inertial/stereo_inertial_tum_vi.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -25,7 +25,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/korey/桌面/my_work/src/ORBSLAM3/build_orbs/CMakeFiles/ORB_SLAM3.dir/DependInfo.cmake"
+  "/home/korey/Desktop/my_work/src/ORBSLAM3/build_orbs/CMakeFiles/ORB_SLAM3.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

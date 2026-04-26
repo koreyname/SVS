@@ -20,26 +20,26 @@ class Frame;
 
 struct MotionGuardConfig
 {
-    // Tracking 级冻结守卫：背景静止 + 可疑区域运动 -> 冻结位姿并可选禁止关键帧
+    // Tracking-level freeze guard: static background plus suspicious-region motion -> freeze the pose and optionally block keyframes.
     bool enable_motion_guard = false;
-    // 0=auto（优先基于权重分组，不足则退化为全局分布）；1=weights_only；2=global_only
+    // 0=auto (prefer weight-based grouping, fall back to global distribution when insufficient); 1=weights_only; 2=global_only
     int source = 0;
-    // 0=仅冻结位姿；1=冻结位姿并禁止关键帧
+    // 0=freeze pose only; 1=freeze pose and block keyframes.
     int mode = 1;
-    // 防止初始化早期误触发导致 reset：只有当地图关键帧数量达到该值才允许冻结
+    // Prevent early-initialization false triggers from causing resets: allow freezing only after the map reaches this number of keyframes.
     int min_keyframes = 5;
-    float safe_weight_threshold = 0.6f;      // >= 该阈值视为“安全背景点”
-    float suspect_weight_threshold = 0.4f;   // <= 该阈值视为“可疑点”
+    float safe_weight_threshold = 0.6f;      // >= this threshold is treated as a safe background point
+    float suspect_weight_threshold = 0.4f;   // <= this threshold is treated as a suspicious point
     int min_safe_points = 80;
     int min_suspect_points = 30;
-    float static_px = 0.5f;                 // 背景静止阈值（中位光流，px）
-    float patch_px = 1.5f;                  // 可疑点运动阈值（中位光流，px）
-    float mismatch_px = 1.0f;               // 可疑-安全的运动差阈值（px）
-    float moving_ratio_threshold = 0.35f;   // 可疑点中 >patch_px 的比例阈值
-    int hold_on_frames = 2;                 // 连续触发 N 帧后开启 guard
-    int hold_off_frames = 4;                // 连续不触发 N 帧后关闭 guard
-    int win_size = 21;                      // LK 光流窗口
-    int pyr_levels = 3;                     // LK 金字塔层数
+    float static_px = 0.5f;                 // Static-background threshold (median optical flow, px)
+    float patch_px = 1.5f;                  // Suspicious-point motion threshold (median optical flow, px)
+    float mismatch_px = 1.0f;               // Suspicious-safe motion-difference threshold (px)
+    float moving_ratio_threshold = 0.35f;   // Fraction threshold for suspicious points with motion > patch_px
+    int hold_on_frames = 2;                 // Enable the guard after N consecutive trigger frames
+    int hold_off_frames = 4;                // Disable the guard after N consecutive non-trigger frames
+    int win_size = 21;                      // LK optical-flow window
+    int pyr_levels = 3;                     // LK pyramid levels
     bool log_motion_guard = false;
 };
 
@@ -70,7 +70,7 @@ struct PatchDefenseConfig
     bool enable_weighted_frontend = true;
     bool enable_weighted_ba = true;
     bool enable_loop_defense = true;
-    // 防御开启时可切换为 ORBSLAM2 风格 LOST 策略（不触发 Atlas 多图重建）
+    // When defense is enabled, switch to the ORBSLAM2-style LOST policy, without triggering Atlas multi-map reconstruction.
     bool defense_orbslam2_lost_policy = true;
     MotionGuardConfig motion_guard;
     bool enable_pyramid_risk = true;
@@ -101,21 +101,21 @@ struct PatchDefenseConfig
     float w_floor = 0.001f;
     float safe_weight_threshold = 0.5f;
     float tau_safe = 0.3f;
-    float loop_cover_reject = 0.05f;      // 覆盖率低于此直接拒绝
-    float loop_cover_no_kl = 0.20f;       // 覆盖率低于此跳过 KL，仅看 safeRatio
-    float loop_cover_loose = 0.35f;       // 覆盖率低于此使用宽松 KL
-    float loop_kl_loose = 1.0f;           // 宽松 KL 阈值
-    float loop_kl_strict = 0.4f;          // 严格 KL 阈值
+    float loop_cover_reject = 0.05f;      // Reject directly when coverage is below this value
+    float loop_cover_no_kl = 0.20f;       // Skip KL and use only safeRatio when coverage is below this value
+    float loop_cover_loose = 0.35f;       // Use the loose KL threshold when coverage is below this value
+    float loop_kl_loose = 1.0f;           // Loose KL threshold
+    float loop_kl_strict = 0.4f;          // Strict KL threshold
     int histogram_bins = 8;
     float histogram_epsilon = 1.0e-4f;
-    // 回环开关积分器：当 safeRatio 极高时允许一次性“快速放行”
-    float loop_safe_ratio_boost = 0.9f;    // safeRatio >= 该值时使用 boost 增量；<=tau_safe 视为关闭
-    float loop_delta_pos_boost = 1.0f;     // boost 增量（建议 >= loop_state_on 以实现“一次验证即放行”）
+    // Loop-switch integrator: when safeRatio is very high, allow a one-shot fast pass.
+    float loop_safe_ratio_boost = 0.9f;    // Use the boost increment when safeRatio >= this value; treat <= tau_safe as off
+    float loop_delta_pos_boost = 1.0f;     // Boost increment (recommend >= loop_state_on to implement one-check pass-through)
     float loop_delta_pos = 0.6f;
     float loop_delta_neg = 0.3f;
     float loop_state_on = 0.65f;
     float loop_state_off = 0.3f;
-    // 权重缩放系数
+    // Weight scaling coefficients
     float k_mask_weight = 1.0f;
     float k_temp_weight = 1.0f;
     float k_risk_mask = 1.0f;
@@ -127,14 +127,14 @@ struct PatchDefenseConfig
     bool log_candidate_gate = false;
     bool log_temporal = false;
     bool log_loop_defense = true;
-    // 权重融合系数（归一后作为指数，用于偏向某分支）
+    // Weight-fusion coefficients (normalized and used as exponents to bias a branch)
     float weight_mask = 1.0f;
     float weight_temp = 1.0f;
-    // 关键帧安全判定
+    // Keyframe safety decision
     bool keyframe_use_safe_ratio = false;
     float keyframe_safe_ratio_min = 0.5f;
 
-    // 回环匹配可视化输出（与 use_patch_defense 无关；只要配置了路径就会输出）
+    // Loop-match visualization output (independent of use_patch_defense; output is written whenever a path is configured)
     std::string loop_match_output_dir;
 };
 

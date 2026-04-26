@@ -1338,7 +1338,7 @@ void LocalMapping::InitializeIMU(float priorG, float priorA, bool bFIBA)
 
     std::chrono::steady_clock::time_point t5 = std::chrono::steady_clock::now();
 
-    // 便于默认 QUIET 模式下也能看到 GBA 生命周期日志
+    // Make GBA lifecycle logs visible even in the default QUIET mode.
     Verbose::PrintMess("Global Bundle Adjustment finished\nUpdating map ...", Verbose::VERBOSITY_QUIET);
 
     // Get Map Mutex

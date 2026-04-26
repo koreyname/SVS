@@ -1,13 +1,13 @@
 %YAML:1.0
 
-# 最优参数配置
-# 生成时间: 2025-12-28T16:44:26.539212
-# 优化方法: bayesian
-# 最优损失: 1.716355
-# 基线 ATE (干净): 1.5695 m
-# 基线 ATE (攻击): 6.8711 m
+# Optimal parameter configuration
+# Generated at: 2025-12-28T16:44:26.539212
+# Optimization method: bayesian
+# Best loss: 1.716355
+# Baseline ATE (clean): 1.5695 m
+# Baseline ATE (attack): 6.8711 m
 #
-# 优化的参数:
+# Optimized parameters:
 #   patch_defense.candidate_score_threshold: 0.3088
 #   patch_defense.candidate_weight_density: 2.9237
 #   patch_defense.candidate_weight_descriptor: 0.6871

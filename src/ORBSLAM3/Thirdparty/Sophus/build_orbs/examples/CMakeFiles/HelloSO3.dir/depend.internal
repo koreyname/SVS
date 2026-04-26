@@ -11,7 +11,7 @@ examples/CMakeFiles/HelloSO3.dir/HelloSO3.cpp.o
  ../sophus/so2.hpp
  ../sophus/so3.hpp
  ../sophus/types.hpp
- /home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/examples/HelloSO3.cpp
+ /home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/examples/HelloSO3.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense

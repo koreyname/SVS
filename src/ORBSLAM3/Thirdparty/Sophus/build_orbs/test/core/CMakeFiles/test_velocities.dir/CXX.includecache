@@ -166,15 +166,15 @@ num_diff.hpp
 se3.hpp
 ../sophus/se3.hpp
 
-/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/test/core/test_velocities.cpp
+/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/test/core/test_velocities.cpp
 iostream
 -
 tests.hpp
-/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/test/core/tests.hpp
+/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/test/core/tests.hpp
 sophus/velocities.hpp
 -
 
-/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/test/core/tests.hpp
+/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/test/core/tests.hpp
 array
 -
 Eigen/StdVector

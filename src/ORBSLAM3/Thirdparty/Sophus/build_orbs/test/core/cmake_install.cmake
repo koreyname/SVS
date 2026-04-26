@@ -1,4 +1,4 @@
-# Install script for directory: /home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/test/core
+# Install script for directory: /home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/test/core
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

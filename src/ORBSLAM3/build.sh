@@ -3,7 +3,7 @@ set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
-# 为避免与同级目录 `src/ORB_SLAM3` 产生 CMakeCache 冲突，默认使用独立构建目录名。
+# Use an independent build directory by default to avoid CMakeCache conflicts with the sibling `src/ORB_SLAM3` directory.
 BUILD_DIR_NAME="${BUILD_DIR_NAME:-build_orbs}"
 BUILD_JOBS="${BUILD_JOBS:-$(nproc)}"
 

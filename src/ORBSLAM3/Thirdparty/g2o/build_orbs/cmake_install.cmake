@@ -1,4 +1,4 @@
-# Install script for directory: /home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/g2o
+# Install script for directory: /home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/g2o
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/g2o/build_orbs/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/g2o/build_orbs/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

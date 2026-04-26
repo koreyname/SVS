@@ -1,6 +1,6 @@
 /**
  * MotionGuard.h
- * 基于“背景静止 + 可疑区域运动”的 Tracking 级冻结守卫。
+ * Tracking-level freeze guard based on a static background plus suspicious-region motion.
  *
  * @author Korey
  * @Date 2025-01-05
@@ -43,8 +43,8 @@ public:
     void SetConfig(const MotionGuardConfig &config);
     void Reset();
 
-    // 基于上一帧图像与上一帧关键点（含 mvPatchWeights）评估当前帧是否进入冻结守卫。
-    // 返回：当前是否处于 guard active 状态（带滞回）。
+    // Evaluate whether the current frame should enter the freeze guard using the previous frame image and previous-frame keypoints, including mvPatchWeights.
+    // Returns whether the guard is currently active, with hysteresis.
     bool Update(const cv::Mat &prevGray, const Frame &prevFrame, const cv::Mat &curGray);
 
     bool IsActive() const { return mbActive; }

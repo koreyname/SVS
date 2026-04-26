@@ -72,7 +72,7 @@ CMakeFiles/rgbd_tum.dir/Examples/RGB-D/rgbd_tum.cc.o
  ../include/TwoViewReconstruction.h
  ../include/Utils/SignalHandler.h
  ../include/Viewer.h
- /home/korey/桌面/my_work/src/ORBSLAM3/Examples/RGB-D/rgbd_tum.cc
+ /home/korey/Desktop/my_work/src/ORBSLAM3/Examples/RGB-D/rgbd_tum.cc
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense

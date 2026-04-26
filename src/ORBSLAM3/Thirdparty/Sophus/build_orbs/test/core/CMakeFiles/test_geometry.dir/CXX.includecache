@@ -170,7 +170,7 @@ type_traits
 common.hpp
 ../sophus/common.hpp
 
-/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/test/core/test_geometry.cpp
+/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/test/core/test_geometry.cpp
 iostream
 -
 sophus/geometry.hpp
@@ -178,9 +178,9 @@ sophus/geometry.hpp
 sophus/test_macros.hpp
 -
 tests.hpp
-/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/test/core/tests.hpp
+/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/test/core/tests.hpp
 
-/home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/test/core/tests.hpp
+/home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/test/core/tests.hpp
 array
 -
 Eigen/StdVector

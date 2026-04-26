@@ -1,75 +1,75 @@
-# ORB-SLAM PatchDefense 防御实现说明（基于 `src/ORBSLAM2`）
+# ORB-SLAM PatchDefense Defense Implementation Notes (Based on `src/ORBSLAM2`)
 
-本文档面向本仓库当前的 **论文实现版本**，目标不是介绍仓库怎么跑，而是把 `src/ORBSLAM2` 里这套 PatchDefense / MotionGuard 防御链路讲清楚：模块放在哪里、每一步实际算了什么、哪些参数真的被代码读取、最终怎样作用到前端、后端和回环。
+This document describes the current **paper implementation version** in this repository. Its goal is not to explain how to run the repository, but to clarify the PatchDefense / MotionGuard defense pipeline under `src/ORBSLAM2`: where each module lives, what each step actually computes, which parameters are truly read by the code, and how the final result affects the frontend, backend, and loop closing.
 
-相关核心代码入口：
+Core code entry points:
 
-- PatchDefense：`src/ORBSLAM2/include/PatchDefense.h`、`src/ORBSLAM2/src/PatchDefense.cc`
-- MotionGuard：`src/ORBSLAM2/include/MotionGuard.h`、`src/ORBSLAM2/src/MotionGuard.cc`
-- Tracking 接入：`src/ORBSLAM2/src/Tracking.cc`
-- 权重落地：`src/ORBSLAM2/include/Frame.h`、`src/ORBSLAM2/src/KeyFrame.cc`
-- 前端/后端加权：`src/ORBSLAM2/src/Initializer.cc`、`src/ORBSLAM2/src/PnPsolver.cc`、`src/ORBSLAM2/src/Sim3Solver.cc`、`src/ORBSLAM2/src/Optimizer.cc`
-- 回环防御：`src/ORBSLAM2/src/LoopClosing.cc`
-
----
-
-## 1. 目标与威胁模型
-
-### 1.1 目标
-
-在尽量不损伤正常跟踪与建图稳定性的前提下，抑制“特征点伪造补丁（patch attack）”对位姿估计、局部优化和回环校正造成的漂移或跳变。
-
-### 1.2 威胁模型（工程视角）
-
-攻击者在图像中注入局部补丁，使该区域产生：
-
-- **异常的特征点密度**：局部爆点
-- **异常的描述子统计**：过于同质或异常离散
-- **异常的方向分布**：梯度方向过度集中
-- **异常的纹理统计**：局部熵与周围上下文不一致
-- **时间上的突发或持续偏离**：某些统计量在连续帧中异常稳定或异常突变
+- PatchDefense: `src/ORBSLAM2/include/PatchDefense.h`, `src/ORBSLAM2/src/PatchDefense.cc`
+- MotionGuard: `src/ORBSLAM2/include/MotionGuard.h`, `src/ORBSLAM2/src/MotionGuard.cc`
+- Tracking integration: `src/ORBSLAM2/src/Tracking.cc`
+- Weight persistence: `src/ORBSLAM2/include/Frame.h`, `src/ORBSLAM2/src/KeyFrame.cc`
+- Frontend/backend weighting: `src/ORBSLAM2/src/Initializer.cc`, `src/ORBSLAM2/src/PnPsolver.cc`, `src/ORBSLAM2/src/Sim3Solver.cc`, `src/ORBSLAM2/src/Optimizer.cc`
+- Loop defense: `src/ORBSLAM2/src/LoopClosing.cc`
 
 ---
 
-## 2. 总体流程（每帧）
+## 1. Goal and Threat Model
 
-当 `use_patch_defense=1` 时，PatchDefense 会在 `Tracking::GrabImage*()` 中于当前帧 ORB 特征提取完成后、正式进入 `Track()` 前执行。
+### 1.1 Goal
 
-整条链路可以概括为：
+Suppress drift or jumps caused by feature-forging patch attacks in pose estimation, local optimization, and loop correction, while minimizing damage to normal tracking and mapping stability.
 
-1. **Stage-A：多尺度局部异常统计**
-   计算密度、描述子离散度、方向集中度三类局部风险，得到每个点的
-   $r_D, r_\sigma, r_\theta$
-2. **Candidate Gate：候选点门控**
-   用加权分数筛出候选集合 $\mathcal{C}$
-3. **Stage-B：RiskMask 风险掩膜**
-   在全图或候选附近计算纹理/方向风险，得到 $r_{\text{mask}}$
-4. **Stage-T：时间一致性**
-   用 EMA + burst 风险得到 $r_{\text{temp}}$，并转成 $w_{\text{temp}}$
-5. **融合**
-   组合 `risk mask` 与 `temporal` 两支，得到最终权重 $w_i$
+### 1.2 Threat Model (Engineering View)
 
-最终，权重通过以下路径影响 SLAM：
+An attacker injects a local patch into the image, causing that region to produce:
 
-- **前端**：Initializer、PnP RANSAC、Sim3 RANSAC、PoseOptimization
-- **后端**：BA 信息矩阵缩放
-- **回环**：safe ratio + cover + 结构分布 KL + 滞后开关
-- **动态干扰**：MotionGuard 冻结位姿并可选禁止关键帧
-
-实现上的两个细节：
-
-- 如果 `use_patch_defense=0`，`PatchDefense::ProcessFrame()` 会直接返回，不做任何防御
-- 如果启用了 candidate gate 但本帧没有候选点，RiskMask 阶段会被整体跳过，`mvPatchRisk` 全部置零
+- **Abnormal feature density**: local feature bursts
+- **Abnormal descriptor statistics**: overly homogeneous or unusually scattered descriptors
+- **Abnormal orientation distribution**: excessively concentrated gradient directions
+- **Abnormal texture statistics**: local entropy inconsistent with the surrounding context
+- **Temporal bursts or persistent deviation**: some statistics remain unusually stable or change abruptly across consecutive frames
 
 ---
 
-## 3. 配置加载（`args.yaml`）
+## 2. Overall Per-Frame Pipeline
 
-PatchDefense 参数从根目录 `args.yaml` 读取，格式是 OpenCV `FileStorage` YAML。
+When `use_patch_defense=1`, PatchDefense runs inside `Tracking::GrabImage*()` after ORB feature extraction for the current frame and before the frame formally enters `Track()`.
 
-真实查找顺序是：
+The full pipeline can be summarized as:
 
-1. 环境变量 `ORB_SLAM_ARGS`
+1. **Stage-A: multi-scale local anomaly statistics**
+   Compute three local risk terms, density, descriptor dispersion, and orientation concentration, yielding
+   $r_D, r_\sigma, r_\theta$ for each point.
+2. **Candidate Gate**
+   Use a weighted score to select the candidate set $\mathcal{C}$.
+3. **Stage-B: RiskMask**
+   Compute texture/orientation risk over the full image or near candidates, yielding $r_{\text{mask}}$.
+4. **Stage-T: temporal consistency**
+   Use EMA plus burst risk to obtain $r_{\text{temp}}$, then convert it to $w_{\text{temp}}$.
+5. **Fusion**
+   Combine the `risk mask` and `temporal` branches to obtain the final weight $w_i$.
+
+The weights eventually affect SLAM through:
+
+- **Frontend**: Initializer, PnP RANSAC, Sim3 RANSAC, PoseOptimization
+- **Backend**: BA information-matrix scaling
+- **Loop closing**: safe ratio + coverage + structural-distribution KL + hysteresis switch
+- **Dynamic interference**: MotionGuard freezes the pose and can optionally block keyframe insertion
+
+Two implementation details:
+
+- If `use_patch_defense=0`, `PatchDefense::ProcessFrame()` returns immediately without applying any defense.
+- If candidate gate is enabled but the current frame has no candidates, the RiskMask stage is skipped entirely and `mvPatchRisk` is set to zero everywhere.
+
+---
+
+## 3. Configuration Loading (`args.yaml`)
+
+PatchDefense parameters are read from the repository-root `args.yaml`, using OpenCV `FileStorage` YAML format.
+
+The actual search order is:
+
+1. Environment variable `ORB_SLAM_ARGS`
 2. `args.yaml`
 3. `../args.yaml`
 4. `../../args.yaml`
@@ -77,14 +77,14 @@ PatchDefense 参数从根目录 `args.yaml` 读取，格式是 OpenCV `FileStora
 6. `../../../../args.yaml`
 7. `../../../../../args.yaml`
 
-若未找到：使用 `PatchDefenseConfig` 的默认值，并打印提示。
+If no file is found, the default values in `PatchDefenseConfig` are used and a message is printed.
 
-当前仓库里两个最相关的文件是：
+The most relevant file in this repository is:
 
 - `args.yaml`
-  当前实验实际使用的参数快照
+  Parameter snapshot actually used by the current experiment.
 
-顶层结构：
+Top-level structure:
 
 ```yaml
 use_patch_defense: 1

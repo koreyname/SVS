@@ -878,7 +878,7 @@ Settings.h
 mutex
 -
 
-/home/korey/桌面/my_work/src/ORBSLAM3/Examples/Monocular/mono_tum_vi.cc
+/home/korey/Desktop/my_work/src/ORBSLAM3/Examples/Monocular/mono_tum_vi.cc
 iostream
 -
 algorithm
@@ -894,11 +894,11 @@ unistd.h
 opencv2/core/core.hpp
 -
 System.h
-/home/korey/桌面/my_work/src/ORBSLAM3/Examples/Monocular/System.h
+/home/korey/Desktop/my_work/src/ORBSLAM3/Examples/Monocular/System.h
 Utils/SignalHandler.h
 -
 Converter.h
-/home/korey/桌面/my_work/src/ORBSLAM3/Examples/Monocular/Converter.h
+/home/korey/Desktop/my_work/src/ORBSLAM3/Examples/Monocular/Converter.h
 
 /usr/include/eigen3/Eigen/Cholesky
 Core

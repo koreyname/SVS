@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus
+CMAKE_SOURCE_DIR = /home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/build_orbs
+CMAKE_BINARY_DIR = /home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/build_orbs
 
 # Utility rule file for other.
 
@@ -67,6 +67,6 @@ CMakeFiles/other.dir/clean:
 .PHONY : CMakeFiles/other.dir/clean
 
 CMakeFiles/other.dir/depend:
-	cd /home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/build_orbs && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus /home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus /home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/build_orbs /home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/build_orbs /home/korey/桌面/my_work/src/ORBSLAM3/Thirdparty/Sophus/build_orbs/CMakeFiles/other.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/build_orbs && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus /home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus /home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/build_orbs /home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/build_orbs /home/korey/Desktop/my_work/src/ORBSLAM3/Thirdparty/Sophus/build_orbs/CMakeFiles/other.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/other.dir/depend
 

@@ -1,6 +1,6 @@
 /**
  * MotionGuard.cc
- * 基于 2D 光流的“静止背景 + 可疑运动”检测，并在 Tracking 层提供冻结守卫判定。
+ * Detects a static background plus suspicious motion using 2D optical flow, and provides freeze-guard decisions at the Tracking layer.
  *
  * @author Korey
  * @Date 2025-01-05
@@ -91,7 +91,7 @@ bool MotionGuard::Update(const cv::Mat &prevGray, const Frame &prevFrame, const 
     const int winOdd = (win % 2 == 0) ? win + 1 : win;
     const int levels = std::max(0, mConfig.pyr_levels);
 
-    // 先用全量光流做“静止背景 + 运动子集”检测（不依赖权重，避免权重未能标出补丁时失效）
+    // First run the static-background plus moving-subset detector on all optical-flow tracks; this does not depend on weights, so it still works when the patch is not down-weighted.
     std::vector<cv::Point2f> ptsPrevAll;
     ptsPrevAll.reserve(prevFrame.N);
     std::vector<uint8_t> label;
@@ -156,7 +156,7 @@ bool MotionGuard::Update(const cv::Mat &prevGray, const Frame &prevFrame, const 
         (mLast.moving_ratio_total >= movingRatioThr);
     const bool triggerGlobal = backgroundStaticGlobal && movingSubsetGlobal;
 
-    // 再尝试基于权重分组的检测（更“宁可少误伤”），但当权重无法把补丁压下去时会失效。
+    // Then try the weight-grouped detector, which is more conservative about false positives, but can fail when the weights do not suppress the patch.
     bool triggerWeights = false;
     int safeTracked = 0;
     int suspectTracked = 0;

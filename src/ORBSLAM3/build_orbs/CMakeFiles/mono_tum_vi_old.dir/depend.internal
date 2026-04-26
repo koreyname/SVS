@@ -72,7 +72,7 @@ CMakeFiles/mono_tum_vi_old.dir/Examples_old/Monocular/mono_tum_vi.cc.o
  ../include/TwoViewReconstruction.h
  ../include/Utils/SignalHandler.h
  ../include/Viewer.h
- /home/korey/桌面/my_work/src/ORBSLAM3/Examples_old/Monocular/mono_tum_vi.cc
+ /home/korey/Desktop/my_work/src/ORBSLAM3/Examples_old/Monocular/mono_tum_vi.cc
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
